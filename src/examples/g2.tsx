@@ -5,6 +5,10 @@ export function SandpackG2() {
       customSetup={{
         dependencies: { "@antv/g2": "4.2.10" },
       }}
+      options={{
+        visibleFiles: ['/index.ts'],
+        bundlerURL: "http://localhost:1234/"
+      }}
       files={{
         "/tsconfig.json": `{
           "include": ["./**/*"],

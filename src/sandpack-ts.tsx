@@ -5,20 +5,25 @@ import {
   SandpackSetup,
   SandpackPredefinedTemplate,
   SandpackFiles,
+  // SandpackCodeEditor as Editor,
+  SandpackOptions,
 } from "@codesandbox/sandpack-react";
-import { Editor } from "./editor";
+// import { Editor } from "./editor";
+import { JsEditor as Editor } from "./editor";
 // import { ReactMonacoEditor as Editor } from "./editor";
 
 export const SandpackTypescript: React.FC<{
-  customSetup: SandpackSetup;
+  customSetup?: SandpackSetup;
   template: SandpackPredefinedTemplate;
   files: SandpackFiles;
-}> = ({ customSetup, template, files }) => {
+  options?: SandpackOptions;
+}> = ({ customSetup, template, files, options }) => {
   return (
     <SandpackProvider
       template={template}
       customSetup={customSetup}
       files={files}
+      options={options}
     >
       <SandpackLayout style={{ width: "100vw" }}>
         {/* <Editor width="100%" height="100%" /> */}
