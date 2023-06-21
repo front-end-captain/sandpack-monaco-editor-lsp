@@ -9,10 +9,12 @@ specifiers:
   '@typescript/vfs': 1.4.0
   '@vitejs/plugin-react': 4.0.0
   esbuild: 0.17.19
+  inversify: 6.0.1
   monaco-editor: 0.34.1
   monaco-languageclient: 5.0.0-next.3
   react: 18.2.0
   react-dom: 18.2.0
+  reflect-metadata: 0.1.13
   typescript: 5.0.2
   vite: 4.3.9
   vscode: npm:@codingame/monaco-vscode-api@1.69.24
@@ -22,10 +24,12 @@ specifiers:
 dependencies:
   '@codesandbox/sandpack-react': 2.6.7_biqbaboplfbrettd7655fr4n2y
   '@monaco-editor/react': 4.5.1_6vrjaj6ridxbohi43n7zt4gn7q
+  inversify: 6.0.1
   monaco-editor: 0.34.1
   monaco-languageclient: 5.0.0-next.3_ulcmzbyn5kjnryhb73qxk4cxp4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  reflect-metadata: 0.1.13
   vscode: /@codingame/monaco-vscode-api/1.69.24_monaco-editor@0.34.1
   vscode-languageclient: 8.0.2
   vscode-languageserver-protocol: 3.17.2
@@ -1015,6 +1019,10 @@ packages:
     resolution: {integrity: sha512-fn4bQ0Xq8FTej09YC/jqKZwtijpvARlRp6wxL5WTA6yPe2YWSJ5RJh7Nm79rK2qB0wr6iDQzH60XGq5V/7u8YQ==}
     dev: false
 
+  /inversify/6.0.1:
+    resolution: {integrity: sha512-B3ex30927698TJENHR++8FfEaJGqoWOgI6ZY5Ht/nLUsFCwHn6akbwtnUAPCgUepAnTpe2qHxhDNjoKLyz6rgQ==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -1146,6 +1154,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /reflect-metadata/0.1.13:
+    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
     dev: false
 
   /rollup/3.23.1:

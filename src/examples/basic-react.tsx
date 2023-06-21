@@ -1,11 +1,13 @@
 import { SandpackTypescript } from "../sandpack-ts";
+import { SandpackLogLevel } from "@codesandbox/sandpack-client";
 
 export function SandpackReact() {
   return (
     <SandpackTypescript
       options={{
-        visibleFiles: ["/index.ts"],
+        visibleFiles: ["/App.jsx"],
         bundlerURL: "http://localhost:1234/",
+        logLevel: SandpackLogLevel.Debug,
       }}
       files={{
         "/App.jsx": `import React from "react"

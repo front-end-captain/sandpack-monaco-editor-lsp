@@ -20,7 +20,9 @@
     "vscode-languageserver-protocol": "3.17.2",
     "vscode": "npm:@codingame/monaco-vscode-api@1.69.24",
     "monaco-languageclient": "5.0.0-next.3",
-    "vscode-languageclient": "8.0.2"
+    "vscode-languageclient": "8.0.2",
+    "inversify": "6.0.1",
+    "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
     "@types/react": "18.0.37",

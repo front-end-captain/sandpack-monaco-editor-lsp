@@ -1,7 +1,7 @@
 import { SandpackTypescript } from "../sandpack-ts";
 import { SandpackLogLevel } from "@codesandbox/sandpack-client";
 
-export function SandpackEcharts() {
+export function SandpackVRender() {
   return (
     <SandpackTypescript
       options={{
@@ -10,36 +10,41 @@ export function SandpackEcharts() {
         logLevel: SandpackLogLevel.Debug,
       }}
       customSetup={{
-        dependencies: { echarts: "5.4.2", "@types/echarts": "4.9.18" },
+        dependencies: { "@visactor/vrender": "0.9.2-fill-stroke.10" },
       }}
       files={{
-        "/index.js": `import * as echarts from 'echarts';
+        "/index.js": `import { createStage, createArc, container, newThemeObj, defaultTicker, IGraphic } from '@visactor/vrender';
 
-const myChart = echarts.init(document.getElementById('main'));
-myChart.setOption({
-  title: {
-    text: 'ECharts 入门示例'
-  },
-  tooltip: {},
-  xAxis: {
-    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-  },
-  yAxis: {},
-  series: [
-    {
-      name: '销量',
-      type: 'bar',
-      data: [5, 20, 36, 10, 10, 20]
-    }
-  ]
-});`,
+const graphics = [];
+graphics.push(createArc({
+  innerRadius: 60,
+  outerRadius: 137.8,
+  startAngle: -1.5707963267948966,
+  endAngle: -0.3141592653589793,
+  x: 100,
+  y: 200,
+  cornerRadius: 6,
+  stroke: 'green',
+  lineWidth: 2,
+  cap: false
+}));
+
+const stage = createStage({
+  canvas: 'canvas',
+  autoRender: true
+});
+
+graphics.forEach(g => {
+  stage.defaultLayer.add(g);
+})
+`,
         "/index.html": `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Echarts</title>
+    <title>VRender</title>
     <style>
       html, body {
         width: 100%;
@@ -49,7 +54,7 @@ myChart.setOption({
     </style>
   </head>
   <body>
-    <div id="main" style="width: 98vw;height:98vh;"></div>
+    <div id="main" style="width: 100vw;height:100vh;"><canvas id="canvas" /></div>
   </body>
 </html>`,
       }}

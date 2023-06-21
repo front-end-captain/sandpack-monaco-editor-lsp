@@ -23,12 +23,14 @@ export const SandpackTypescript: React.FC<{
       template={template}
       customSetup={customSetup}
       files={files}
-      options={options}
+      options={{...options, classes: {
+        "sp-wrapper": "my-sp-wrapper"
+      }}}
     >
-      <SandpackLayout style={{ width: "100vw" }}>
+      <SandpackLayout style={{ width: "100%", height: "100%" }}>
         {/* <Editor width="100%" height="100%" /> */}
         <Editor />
-        <SandpackPreview style={{ height: "50vh" }} />
+        <SandpackPreview style={{  width: "100%", height: "100%"  }} />
       </SandpackLayout>
     </SandpackProvider>
   );

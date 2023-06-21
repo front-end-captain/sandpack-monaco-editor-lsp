@@ -10,9 +10,6 @@ import {
 type TMonaco = typeof Monaco;
 
 export interface EditorProps {
-  // code: string;
-  // libsCode: string[];
-  // onEditorChange: (value: string | undefined) => void;
   attributes?: HTMLAttributes<HTMLDivElement>;
   width?: string | number;
   height?: string | number;
@@ -39,7 +36,7 @@ export const Editor: FunctionComponent<EditorProps> = (props) => {
   };
 
   return (
-    <SandpackStack style={{ height: "50vh", margin: 0 }}>
+    <SandpackStack style={{ height: "100%", margin: 0 }}>
       <div style={{ flex: 1 }}>
         <ReactEditor
           key={sandpack.activeFile}

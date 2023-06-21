@@ -1,4 +1,6 @@
 import { SandpackTypescript } from "../sandpack-ts";
+import { SandpackLogLevel } from "@codesandbox/sandpack-client";
+
 export function SandpackG2() {
   return (
     <SandpackTypescript
@@ -6,22 +8,12 @@ export function SandpackG2() {
         dependencies: { "@antv/g2": "4.2.10" },
       }}
       options={{
-        visibleFiles: ['/index.ts'],
-        bundlerURL: "http://localhost:1234/"
+        visibleFiles: ["/index.js"],
+        bundlerURL: "http://localhost:1234/",
+        logLevel: SandpackLogLevel.Debug,
       }}
       files={{
-        "/tsconfig.json": `{
-          "include": ["./**/*"],
-          "compilerOptions": {
-            "strict": true,
-            "esModuleInterop": true,
-            "lib": [
-                "dom",
-                "es2015"
-            ]
-          } 
-        }`,
-        "/index.ts": `import { Chart } from '@antv/g2';
+        "/index.js": `import { Chart } from '@antv/g2';
 
 const data = [
   { genre: 'Sports', sold: 275 },
@@ -46,14 +38,13 @@ chart.interval().position('genre*sold');
             
 // Step 4: 渲染图表
 chart.render();`,
-        "/public/index.html": `
-        <!DOCTYPE html>
+        "/index.html": `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>G2</title>
     <style>
       html, body {
         width: 100%;
@@ -66,7 +57,7 @@ chart.render();`,
   </body>
 </html>`,
       }}
-      template="vanilla-ts"
+      template="vanilla"
     />
   );
 }
