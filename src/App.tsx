@@ -5,8 +5,8 @@
 // import { SandpackVChart } from "./examples/vchart";
 // import { SandpackVTable } from "./examples/vtable";
 // import { SandpackVGrammar } from "./examples/vgrammar";
-// import { SandpackVRender } from "./examples/vrender";
-import { SandpackInversifyDemo } from "./examples/inversify-demo";
+import { SandpackVRender } from "./examples/vrender";
+// import { SandpackInversifyDemo } from "./examples/inversify-demo";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
       {/* <SandpackVChart /> */}
       {/* <SandpackVTable /> */}
       {/* <SandpackVGrammar /> */}
-      {/* <SandpackVRender /> */}
-      <SandpackInversifyDemo />
+      <SandpackVRender />
+      {/* <SandpackInversifyDemo /> */}
     </>
   );
 }

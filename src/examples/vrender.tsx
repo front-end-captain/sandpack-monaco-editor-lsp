@@ -6,7 +6,7 @@ export function SandpackVRender() {
     <SandpackTypescript
       options={{
         visibleFiles: ["/index.js"],
-        bundlerURL: "http://localhost:1234/",
+        // bundlerURL: "http://localhost:1234/",
         logLevel: SandpackLogLevel.Debug,
       }}
       customSetup={{
@@ -30,8 +30,9 @@ graphics.push(createArc({
 }));
 
 const stage = createStage({
-  canvas: 'canvas',
+  // canvas: 'canvas',
   autoRender: true
+  // container: document.get
 });
 
 graphics.forEach(g => {

@@ -6,14 +6,14 @@ export function SandpackVGrammar() {
     <SandpackTypescript
       options={{
         visibleFiles: ["/index.js"],
-        bundlerURL: "http://localhost:1234/",
+        // bundlerURL: "http://localhost:1234/",
         logLevel: SandpackLogLevel.Debug,
       }}
       customSetup={{
         dependencies: { "@visactor/vgrammar": "0.0.11-alpha.8" },
       }}
       files={{
-        "/index.js": `import {VGrammar, VGrammarView} from '@visactor/vgrammar'
+        "/index.js": `import * as VGrammar from '@visactor/vgrammar'
 VGrammar.registerBoxplotGlyph();
 
 const spec = {
@@ -99,12 +99,12 @@ const spec = {
       },
       zero: true
     },
-    {
-      id: 'colorScale',
-      type: 'ordinal',
-      domain: { data: 'table', field: 'test' },
-      range: colorSchemeForLight
-    }
+    // {
+    //   id: 'colorScale',
+    //   type: 'ordinal',
+    //   domain: { data: 'table', field: 'test' },
+    //   range: colorSchemeForLight
+    // }
   ],
 
   marks: [
@@ -196,7 +196,7 @@ const spec = {
 };
 
 const container = document.getElementById('main');
-const vGrammarView = new VGrammarView({
+const vGrammarView = new VGrammar.View({
   width: spec.width,
   height: spec.height,
   container: container,
